@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta httpequiv="X-UA-Compatible" content="ie=edge">
+    <title>Test TalkBack and Chrome Main Element Focus</title>
+  </head>
+  <body>
+    <header>
+      <div><img src="logo.svg" role="image" alt="CVS Logo"></div>
+      <nav aria-label="Site navigation">
+        <ul>
+          <li><a href="#">Test link (does not work)"</a></li>
+          <li><a href="#">Test link (does not work)"</a></li>
+          <li><a href="#">Test link (does not work)"</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main tabindex=""-1">
+      <nav aria-label="Breadcrumbs">
+        <p><a href=""#">Back</a></p>
+      </nav>
+      <h1>Testing</h1>
+      <p>This page has the following structure:</p>
+      <ol>
+        <li>A header element containing
+          <ol>
+            <li>A div containing logo</li>
+            <li>A nav region containing
+              <ol>
+                <li>Three list items, each with one link</li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li>A main element with tabindex="-1" containing<ol>
+          <li>A nav element with the label "Breadcrumbs" containing one link</li>
+          <li>An H1</li>
+          <li>Several paragraphs and this list.</li>
+        </ol></li>
+      </ol>
+      <p>I expect that, with TalkBack on Android, the entire Main element might receive TB swipe focus when moving from the navigation links in the header before TB focus lands on the Back link.</p>
+    </main>
+  </body>
+</html>
